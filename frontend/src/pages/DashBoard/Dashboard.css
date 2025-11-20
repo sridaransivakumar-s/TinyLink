@@ -1,0 +1,53 @@
+.dashboard h2 {
+  margin-bottom: 20px;
+}
+
+.add-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-form input {
+  padding: 8px;
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.add-form button {
+  padding: 10px 18px;
+  background: black;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.links-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.links-table th,
+.links-table td {
+  border-bottom: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.truncate {
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.delete-btn {
+  padding: 6px 12px;
+  background: #e63946;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

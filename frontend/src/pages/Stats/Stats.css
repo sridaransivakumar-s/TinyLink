@@ -1,0 +1,11 @@
+.stats {
+  margin-top: 20px;
+}
+
+.stat-box {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  line-height: 30px;
+  border: 1px solid #ddd;
+}
