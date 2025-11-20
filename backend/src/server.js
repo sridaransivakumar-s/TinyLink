@@ -39,7 +39,7 @@ app.use("/api", apiRouter);
 
 app.use(express.static("public"));
 
-app.use("/", webRouter);
+app.use("/redirect", webRouter);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => 
