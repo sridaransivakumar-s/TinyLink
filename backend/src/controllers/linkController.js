@@ -53,11 +53,18 @@ export const getLinkStats = async (req, res) => {
 export const deleteLink = async (req, res) => {
   const { code } = req.params;
 
-  await pool.query("DELETE FROM links WHERE code=$1", [code]);
+  const result = await pool.query(
+    "DELETE FROM links WHERE code=$1",
+    [code]
+  );
 
-  res.json({ success: true });
+  if (result.rowCount === 0) {
+    // No link was deleted → code doesn't exist
+    return res.status(404).json({ error: "Code not found" });
+  }
+
+  return res.json({ success: true });
 };
-
 export const redirectLink = async (req, res) => {
   const { code } = req.params;
 
