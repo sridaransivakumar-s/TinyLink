@@ -4,6 +4,7 @@ import { getStats } from "../../services/api";
 import { useNavigate } from "react-router-dom";
 
 import "./Stats.css";
+const API_BASE = import.meta.env.VITE_BACKEND_URL;
 
 export default function Stats() {
   const { code } = useParams();
@@ -15,8 +16,17 @@ export default function Stats() {
 
   if (!data) return <p>Loading...</p>;
   const handleClick = async () => {
-    window.open(`http://localhost:3000/${data.code}`, "_blank");
-     navigate("/");
+      try {
+    await fetch(`${API_BASE}/redirect/${data.code}`, {
+      method: "GET",
+      redirect: "manual" 
+    });
+    window.open(`${data.url}`, "_blank");
+    navigate("/");
+  } catch (err) {
+    console.error(err);
+  }
+
 };
 
   return (
