@@ -25,7 +25,6 @@ export const createLink = async (req, res) => {
 
     res.status(201).json({
       code,
-      shortUrl: `${process.env.BASE_URL}/${code}`
     });
 
   } catch (err) {

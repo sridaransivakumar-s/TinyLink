@@ -40,15 +40,6 @@ app.use("/api", apiRouter);
 app.use(express.static("public"));
 
 app.use("/", webRouter);
-app.get("/db-test", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT NOW()");
-    res.json(result.rows);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send(err.message);
-  }
-});
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => 
